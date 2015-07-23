@@ -199,6 +199,25 @@ void test_strcat (void)
 	printf("------------------\n\n");
 }
 
+void test_putchar()
+{
+	printf("----- putchar -----\n");
+
+  ft_putchar('s');
+  ft_putchar('\n');
+  ft_putchar('y');
+  ft_putchar('\n');
+  ft_putchar('o');
+  ft_putchar('\n');
+  ft_putchar('l');
+  ft_putchar('\n');
+  ft_putchar('o');
+  ft_putchar('\n');
+
+	printf("------------------\n\n");
+}
+
+
 void test_strchr (void)
 
 {	printf("----- strchr  -----\n");
@@ -240,6 +259,20 @@ void test_putsfd()
 	printf("------------------\n\n");
 }
 
+void test_strclr(void)
+
+{	printf("----- strclr -----\n");
+
+	char one[6] = "Hello\0";
+
+	printf("one :[%s]\n", one);
+	ft_strclr(one);
+	printf("one after strclr: [%s] )\n", one);
+
+	printf("------------------\n\n");
+}
+
+
 
 int main (void)
 {
@@ -268,5 +301,7 @@ int main (void)
 	test_strchr();
 	test_isspace();
 	test_putsfd();
+	test_putchar();
+	test_strclr();
 	return 0;
 }

@@ -18,7 +18,9 @@ NASM_FILES = ft_isascii.s \
 			 ft_strcat.s \
 			 ft_strchr.s \
 			 ft_isspace.s \
-			 ft_putsfd.s
+			 ft_putsfd.s	\
+			 ft_putchar.s \
+			 ft_strclr.s
 
 DIR_SRC = srcs/libfts
 DIR_OBJ = .obj
