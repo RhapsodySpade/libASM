@@ -1,24 +1,27 @@
 section .text
-	global _ft_strchr
+  global _ft_strchr
+  extern _ft_strlen
 
 _ft_strchr:
-	push rbx
-	mov rbx, rsi
+  cmp rdi, 0
+  je error
 
-loop:
-	cmp byte[rdi], 0
-	je error
-	cmp byte[rdi], bl
-	je found
-	inc rdi
-	jmp loop
+  push rdi
+  call _ft_strlen
+  pop rdi
+
+  mov rcx, rax
+  inc rcx
+  mov rax, rsi
+  repne scasb
+
+  cmp rcx, 0
+  je error
+
+  dec rdi
+  mov rax, rdi
+  ret
 
 error:
-	mov rax, 0
-	pop rbx
-	ret
-
-found:
-	mov rax, rdi
-	pop rbx
-	ret
+  xor rax, rax
+  ret

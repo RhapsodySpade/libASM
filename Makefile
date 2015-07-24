@@ -52,8 +52,8 @@ TEST = test
 FLAGS = -Wall -Wextra -Werror
 LIB_FLAGS = -L. -lfts
 
-$(TEST): $(LIBFT) $(NASM_OBJ) main.c
-	gcc $(FLAGS) main.c $(LIB_FLAGS) -o $(TEST) -I inc
+$(TEST): $(LIBFT) $(NASM_OBJ) main2.c
+	gcc $(FLAGS) main2.c $(LIB_FLAGS) -o $(TEST) -I inc
 
 #-----------------------------------#
 
